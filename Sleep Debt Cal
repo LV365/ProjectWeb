@@ -1,0 +1,49 @@
+//checking how many hours of sleep user got each night of the week
+const getSleepHours = day => {
+  switch(day){
+    case 'Monday':
+      return 8;
+    case 'Tuesday':
+      return 7;
+    case 'Wednesday':
+      return 8;
+    case 'Thursday':
+      return 9;
+    case 'Friday':
+      return 6;
+    case 'Saturday':
+      return 9;
+    case 'Sunday':
+      return 8;
+  }
+};
+
+ //getting total sleep hours that user actually slept for whole week
+const getActualSleepHours = () =>{
+    return getSleepHours('Monday') +
+    getSleepHours('Tuesday') +
+    getSleepHours('Wednesday') +
+    getSleepHours('Thursday') +
+    getSleepHours('Friday') +
+    getSleepHours('Saturday') +
+    getSleepHours('Sunday');
+  }
+
+//getting ideal sleep hours per day that user prefers, multiplying them by 7 as we need to count all days
+const getIdealSleepHours = () =>{
+    let idealHours = 8;
+    return idealHours*7;
+  }
+  
+const calculateSleepDebt = () => {
+    var actualSleepHours=getActualSleepHours();
+    var idealSleepHours=getIdealSleepHours();
+    if (actualSleepHours===idealSleepHours) {
+        console.log(`Perfect amount of sleep ${actualSleepHours}hour`)
+    } else if (actualSleepHours>idealSleepHours){
+        console.log(`You got more sleep than needed ${actualSleepHours - idealSleepHours}hour`)
+    } else {
+        console.log(`Get some sleep ${idealSleepHours - actualSleepHours}hour`)
+    }
+};
+calculateSleepDebt()
