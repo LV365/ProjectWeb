@@ -1,0 +1,8 @@
+var kelvin=76//creates variable kelvin which is equal to 293
+var celsius=kelvin-273//creates variable celsius which is 273 less than kelvin
+var fahrenheit=celsius*(9/5)+32//creates variable fahrenheit which uses celsius multiplied by 9 divided by 5 added by 32
+fahrenheit=Math.floor(fahrenheit);//rounds fahrenheit to nearest integer
+console.log(`The temperature is ${fahrenheit} degrees Fahrenheit.`);
+let newton=celsius*(33/100)
+newton=Math.floor(newton)
+console.log(`The temperature is ${newton} degrees Newton.`);
